@@ -10,8 +10,8 @@
         get #getInformationDatabase() {
             let informationDatabase = {
               host: "127.0.0.1",
-              username: "root-np",
-              password:"642/321Architecture?222",
+              username: "***",
+              password:"***",
               port:"3308",
               databasename:"employee"
             };
