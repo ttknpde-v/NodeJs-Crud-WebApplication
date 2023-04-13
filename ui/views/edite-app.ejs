@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/img/node.jpg">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>system of a company</title>
+</head>
+<body>
+    <!-- menubar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <img class="navbar-brand" src="/img/node.jpg" style="width: 50px ; height: 50px; border-radius: 50px ; border: solid 2px #0f5132">Form Employee</img>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/views">Views</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#"  aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search..." >
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- menubar -->
+
+    <!-- form -->
+    <div class="container" style="max-width: 600px">
+        <div class="text-center mt-4">
+            <h4 class="mb-3">Edite your information</h4>
+        </div>
+        <form action="/api/update" method="post">
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="col-form-label">Name</label>
+                        <input type="text" class="form-control" name="name" value="<%= name; %>">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="col-form-label">Phone</label>
+                        <input type="text" class="form-control" name="phone" value="<%= phone; %>" maxlength="10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-outline ">
+                <label class="col-form-label">Email</label>
+                <input type="email" class="form-control" name="email" value="<%= email; %>">
+            </div>
+
+            <div class="form-outline">
+                <label class="col-form-label">City</label>
+                <input type="text" class="form-control" name="city" value="<%= city; %>">
+            </div>
+
+            <div class="form-outline">
+                <label class="col-form-label">Position</label>
+                <input type="text" class="form-control" name="position" value="<%= position; %>">
+            </div>
+
+            <div class="mt-4">
+                <input type="number" hidden="hidden" name="id" value="<%= id ;%>">
+                <button type="submit" class="btn btn-outline-success">Edite</button>
+            </div>
+        </form>
+    </div>
+    <!-- form -->
+</body>
+</html>

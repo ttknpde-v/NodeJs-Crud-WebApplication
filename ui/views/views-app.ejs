@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/img/node.jpg">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>system of a company</title>
+</head>
+<body>
+<!-- menubar -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img class="navbar-brand" src="/img/node.jpg" style="width: 50px ; height: 50px; border-radius: 50px ; border: solid 2px #0f5132">Form Employee</img>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/views">Views</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#"  aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search..." >
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- menubar -->
+
+<!-- table -->
+<div class="container">
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th>order</th>
+                <th>name / email</th>
+                <th>phone</th>
+                <th>city</th>
+                <th>position</th>
+                <th class="text-center" colspan="2">action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- loop -->
+            <% if(list.length > 0) { %>
+                <% for (let i = 0 ; i < list.length ; i ++) { %>
+                <tr>
+                    <td><p class="text-muted mb-0"><%= list[i].id; %></p></td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="../img/person.png" class="rounded-circle" style="width: 45px; height: 45px"/>
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1"><%= list[i].name; %></p>
+                                <p class="text-muted mb-0"><%= list[i].email; %></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><p class="text-muted mb-0"><%= list[i].phone; %></p></td>
+                    <td><p class="text-muted mb-0"><%= list[i].city; %></p></td>
+                    <td><p class="text-muted mb-0"><%= list[i].position; %></p></td>
+                    <td colspan="2" class="text-center">
+                        <a class="btn btn-success" href="/api/edite/<%= list[i].id; %>">Edit</a>
+                        <a class="btn btn-danger" href="/api/delete/<%= list[i].id; %>">Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+            <% } %>
+
+        </tbody>
+    </table>
+</div>
+<!-- table -->
+</body>
+</html>
